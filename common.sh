@@ -26,7 +26,6 @@ push_files() {
 
 backup_remote() {
     BACKUPDIR=$1
-    BACKUPDIR="$(date +%Y%m%d-%H%M%S)"
     pull_files ${BACKUPDIR}
     tar -czf remote/${BACKUPDIR}.tgz remote/${BACKUPDIR}
 
@@ -57,7 +56,7 @@ get_last_backup() {
 
 copy_to_steam() {
     LAST_BACKUP=$(get_last_backup remote)
-    cp remote/${LAST_BACKUP}/* "${SAVEGAME_DIR}"
+    cp ${LAST_BACKUP}* "${SAVEGAME_DIR}"
 }
 
 stop_server() {
