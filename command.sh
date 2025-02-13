@@ -17,6 +17,12 @@ case $1 in
         source pull-remote.sh ;;
     "push")
         source push-remote.sh ;;
+    "restart")
+        source restart.sh ;;
+    "stop")
+        stop_server ;;
+    "start")
+        start_server ;;
     "ip")
         get_server_ip ;;
 esac
